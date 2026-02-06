@@ -1,32 +1,39 @@
-import React from "react"
-import type { Metadata } from 'next'
-import { Caveat, Quicksand } from 'next/font/google'
+import React from "react";
+import type { Metadata } from "next";
+import { Caveat, Quicksand } from "next/font/google";
 
-import './globals.css'
+import "./globals.css";
 
-const caveat = Caveat({ 
-  subsets: ['latin'],
-  variable: '--font-handwritten',
-})
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-handwritten",
+});
 
-const quicksand = Quicksand({ 
-  subsets: ['latin'],
-  variable: '--font-sans',
-})
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  title: 'San Valentín',
-  description: 'Una carta especial para mi Artemiza.',
-}
+  title: "San Valentín",
+  description: "Una carta especial para mi Artemiza.",
+  icons: {
+    icon: "/icon.png",
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${caveat.variable} ${quicksand.variable} font-sans antialiased`}>{children}</body>
+      <body
+        className={`${caveat.variable} ${quicksand.variable} font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
-  )
+  );
 }
